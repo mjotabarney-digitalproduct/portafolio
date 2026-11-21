@@ -11,6 +11,10 @@ missing = []
 
 def t(x, lang): return x[lang] if isinstance(x, dict) else x
 def has(rel): return os.path.exists(os.path.join(ASSETS, rel))
+import hashlib
+def v(rel):  # cache-busting suffix from file content
+    p=os.path.join(ASSETS, rel)
+    return rel + ('?v=' + hashlib.md5(open(p,'rb').read()).hexdigest()[:8] if os.path.exists(p) else '')
 def num(n, lang):  # 95.7% -> 95,7% in Spanish
     if lang == 'es': n = STATS_ES_NUM.get(n, n.replace('.', ','))
     return n
@@ -37,7 +41,7 @@ def head(lang, title, desc, depth, alt_href, canonical_path):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}assets/css/style.css">
+<link rel="stylesheet" href="{r}assets/{v('css/style.css')}">
 </head>
 <body>
 <a class="skip" href="#main">{'Skip to content' if lang=='en' else 'Saltar al contenido'}</a>
@@ -68,7 +72,7 @@ def contact(lang, depth):
 '''
 
 def foot(depth):
-    return f'<script src="{prefix(None, depth)}assets/js/main.js" defer></script>\n</body>\n</html>\n'
+    return f'<script src="{prefix(None, depth)}assets/{v('js/main.js')}" defer></script>\n</body>\n</html>\n'
 
 # ---------------------------------------------------------------- home
 def home(lang):
@@ -101,7 +105,7 @@ def home(lang):
     for i, c in enumerate(CASES, 1):
         tags = ''.join(f'<span class="pill">{t(x, lang)}</span>' for x in [c['year']] + c['tags'])
         if has(c['cover']):
-            img = f'<div class="img"><img src="{r}assets/{c["cover"]}" alt="" loading="lazy"></div>'
+            img = f'<div class="img"><img src="{r}assets/{v(c["cover"])}" alt="" loading="lazy"></div>'
         else:
             missing.append(c['cover']); img = '<div class="img ph" aria-hidden="true"></div>'
         cards += f'''<a class="card {c['color']} reveal" href="{r if lang=='en' else ''}work/{c['slug']}/">
@@ -152,7 +156,7 @@ def render_block(b, lang, r):
         for i in imgs:
             if not has(i): missing.append(i)
         if not ok: return ''
-        frames = ''.join(f'<div class="frame"><img src="{r}assets/{i}" alt="{t(cap, lang)}" loading="lazy"></div>' for i in ok)
+        frames = ''.join(f'<div class="frame"><img src="{r}assets/{v(i)}" alt="{t(cap, lang)}" loading="lazy"></div>' for i in ok)
         cls = ('combo pair' if kind == 'combo' else 'pair') if len(ok) > 1 else kind
         inner = f'<div class="frames">{frames}</div>' if len(ok) > 1 else frames
         return f'<figure class="{cls}">{inner}<figcaption>{t(cap, lang)}</figcaption></figure>'

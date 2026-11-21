@@ -3,7 +3,7 @@ def L(en, es): return {'en': en, 'es': es}
 
 SITE = {
     'name': 'María José Barney',
-    'email': 'majitobarney@gmail.com',
+    'email': 'mjotabarney@gmail.com',
     'linkedin': 'https://www.linkedin.com/in/mariajosebarney/',
     'behance': 'https://www.behance.net/mariajosebarney',
     'role': L('Product Designer · UI, UX &amp; Research', 'Diseñadora de Producto · UI, UX e Investigación'),
