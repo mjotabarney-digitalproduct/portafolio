@@ -25,7 +25,7 @@ HERO = {
     'dek': L('Four years turning regulated, high-friction processes into flows people actually finish: insurance enrollment, health questionnaires, a 3,800-person intranet. I win arguments with evidence, not taste.',
              'Cuatro años convirtiendo procesos regulados y llenos de fricción en flujos que la gente sí termina: afiliación a seguros, cuestionarios de salud, una intranet de 3.800 personas. Gano las discusiones con evidencia, no con gusto.'),
     'meta': [L('<i class="dot"></i>Available now', '<i class="dot"></i>Disponible ahora'),
-             L('Cali, Colombia · open to relocating to Bogotá', 'Cali, Colombia · con disponibilidad de traslado a Bogotá'),
+             L('Cali, Colombia', 'Cali, Colombia'),
              L('English C2 · Spanish native', 'Inglés C2 · Español nativo')],
     'cta1': L('See the work ↓', 'Ver los casos ↓'),
     'cta2': L('Email me', 'Escríbeme'),
