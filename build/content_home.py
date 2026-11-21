@@ -20,8 +20,8 @@ NAV = [
 
 HERO = {
     'label': L('Product Designer · UI, UX &amp; Research', 'Diseñadora de Producto · UI, UX e Investigación'),
-    'h1': L('I design the parts of a process <em>nobody scoped.</em>',
-            'Diseño las partes del proceso que <em>nadie definió.</em>'),
+    'h1': L('Where things get complicated,<br><em>I get curious.</em>',
+            'Cuando algo se complica,<br><em>me da curiosidad.</em>'),
     'dek': L('Four years turning regulated, high-friction processes into flows people actually finish: insurance enrollment, health questionnaires, a 3,800-person intranet. I win arguments with evidence, not taste.',
              'Cuatro años convirtiendo procesos regulados y llenos de fricción en flujos que la gente sí termina: afiliación a seguros, cuestionarios de salud, una intranet de 3.800 personas. Gano las discusiones con evidencia, no con gusto.'),
     'meta': [L('<i class="dot"></i>Available now', '<i class="dot"></i>Disponible ahora'),
