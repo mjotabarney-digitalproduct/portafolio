@@ -33,15 +33,21 @@ HERO = {
 
 STATS = {
     'label': L('By the numbers', 'En cifras'),
-    'intro': L('I measure work by what it changes: who gets included, what stops breaking, which decision moved. Every number here comes from a test, an inventory or a delivered artifact.',
-               'Mido el trabajo por lo que cambia: a quién incluye, qué deja de romperse, qué decisión se movió. Cada número sale de una prueba, un inventario o un entregable real.'),
+    'intro': L('A few results from recent projects, each one tied to a decision I made. Every number comes from a usability test, an inventory or a delivered project.',
+               'Algunos resultados de proyectos recientes, cada uno ligado a una decisión que tomé. Cada número sale de una prueba de usabilidad, un inventario o un proyecto entregado.'),
     'bars': [
-        ('4', L('Years of professional work in UI, UX and research', 'Años de trabajo profesional en UI, UX e investigación')),
-        ('23', L('Participants in an unmoderated usability test I designed and ran', 'Participantes en una prueba de usabilidad no moderada que diseñé y ejecuté')),
-        ('27%', L('Didn’t realize enrollment continued after paying. The finding that changed the flow', 'No entendieron que la afiliación seguía después de pagar. El hallazgo que cambió el flujo')),
-        ('124', L('Severity-rated heuristic findings on a 200+ screen banking platform', 'Hallazgos heurísticos clasificados por severidad en una plataforma bancaria de más de 200 pantallas')),
-        ('3,832', L('Employees in 21 areas served by the intranet I helped redesign', 'Colaboradores de 21 áreas que usan la intranet que ayudé a rediseñar')),
-        ('+44%', L('Intranet coverage after I split it into a full and a light version', 'De cubrimiento de la intranet tras dividirla en versión completa y ligera')),
+        ('4', L('Years designing digital products professionally, across insurance, health, a corporate intranet and a B2B startup.',
+                'Años diseñando productos digitales de forma profesional, en seguros, salud, una intranet corporativa y una startup B2B.')),
+        ('3', L('Insurance products designed end to end for a multinational health company, from first research to developer handoff.',
+                'Productos de seguros diseñados de punta a punta para una multinacional del sector salud, desde la investigación hasta la entrega a desarrollo.')),
+        ('27%', L('Of people testing a health plan checkout thought they were done after paying. The extra step I proposed to fix it was adopted.',
+                  'De quienes probaron la compra de un plan de salud creyeron que habían terminado al pagar. El paso adicional que propuse para resolverlo se adoptó.')),
+        ('1', L('Health questionnaire for up to 20 people on a policy, instead of one per person, with a question model I proposed.',
+                'Cuestionario de salud para hasta 20 personas de una póliza, en lugar de uno por persona, con un modelo de pregunta que propuse.')),
+        ('+44%', L('More employees can reach their company intranet after I split it into an office version and a remote one for plant staff.',
+                   'Más colaboradores pueden entrar a la intranet de su empresa desde que la dividí en una versión de oficina y una remota para el personal de planta.')),
+        ('124', L('Usability issues I found and ranked by severity on a banking platform of more than 200 screens, 12 of them critical.',
+                  'Problemas de usabilidad que encontré y clasifiqué por severidad en una plataforma bancaria de más de 200 pantallas, 12 de ellos críticos.')),
     ],
 }
 # Spanish number formatting for the one value with a thousands separator

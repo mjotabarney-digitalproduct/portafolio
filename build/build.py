@@ -4,7 +4,7 @@ import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from content_home import SITE, NAV, HERO, STATS, STATS_ES_NUM, WORK, PRINCIPLES, ABOUT, CONTACT
-from content_cases import CASES, NDA
+from content_cases import CASES, NDA, NDA_TQ
 
 ASSETS = os.path.join(ROOT, 'assets')
 missing = []
@@ -185,8 +185,9 @@ def case(c, idx, lang):
         body = ''.join(render_block(b, lang, r) for b in s['body'])
         h += f'''<section class="block reveal"><div class="side"><span class="n">0{i}</span>{t(s['side'], lang)}</div><div><h2>{t(s['title'], lang)}</h2>{body}</div></section>
 '''
-    if c['slug'] != 'tqnet' and c['slug'] != 'xtam':
-        h += f'<div class="block"><div></div><p class="nda">{t(NDA, lang)}</p></div>'
+    if c['slug'] != 'xtam':
+        note = NDA_TQ if c['slug'] == 'tqnet' else NDA
+        h += f'<div class="block"><div></div><p class="nda">{t(note, lang)}</p></div>'
     h += '</div></article>\n'
     nxt = CASES[(idx + 1) % len(CASES)]
     nl = 'Next case' if lang == 'en' else 'Siguiente caso'
