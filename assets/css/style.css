@@ -1,8 +1,8 @@
-/* María José Barney — portfolio
+/* María José Barney portfolio
    Palette from her references: ink #391212 · wine #74342B · sand #EDDBC2 · periwinkle #8FA4D1 */
 :root{
   --ink:#391212; --wine:#74342B; --sand:#EDDBC2; --paper:#F7EFE4; --peri:#8FA4D1; --peri-deep:#3F4F86;
-  --rose:#C99C8A; --clay:#A0614F;
+  --rose:#C99C8A; --purple:#6B4A9E; --clay:#A0614F;
   --text:#391212; --muted:#74534B; --line:rgba(57,18,18,.16);
   --serif:"Instrument Serif", "Times New Roman", serif;
   --body:"Newsreader", Georgia, serif;
@@ -28,7 +28,8 @@ a{color:inherit}
 /* ---------- header ---------- */
 .site-head{position:sticky;top:0;z-index:20;background:rgba(247,239,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem}
-.brand{font-family:var(--serif);font-size:24px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.brand{font-family:var(--body);font-size:21px;font-weight:600;text-decoration:none;letter-spacing:.015em;white-space:nowrap}
+.brand em{font-style:italic;font-weight:400;color:var(--purple);letter-spacing:.01em;padding:0 .04em}
 .nav{display:flex;align-items:center;gap:clamp(.8rem,2vw,1.8rem);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
 .nav a{text-decoration:none}
 .nav a:hover{text-decoration:underline;text-underline-offset:4px}

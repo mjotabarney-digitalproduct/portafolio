@@ -19,13 +19,13 @@ NAV = [
 ]
 
 HERO = {
-    'label': L('Product Designer — UI · UX · Research', 'Diseñadora de Producto — UI · UX · Investigación'),
+    'label': L('Product Designer · UI, UX &amp; Research', 'Diseñadora de Producto · UI, UX e Investigación'),
     'h1': L('I design the parts of a process <em>nobody scoped.</em>',
             'Diseño las partes del proceso que <em>nadie definió.</em>'),
-    'dek': L('Six years turning regulated, high-friction processes into flows people actually finish — insurance enrollment, health questionnaires, a 3,800-person intranet. I win arguments with evidence, not taste.',
-             'Seis años convirtiendo procesos regulados y llenos de fricción en flujos que la gente sí termina: afiliación a seguros, cuestionarios de salud, una intranet de 3.800 personas. Gano las discusiones con evidencia, no con gusto.'),
-    'meta': [L('<i class="dot"></i>Open to new roles', '<i class="dot"></i>Disponible'),
-             L('Cali, Colombia', 'Cali, Colombia'),
+    'dek': L('Four years turning regulated, high-friction processes into flows people actually finish: insurance enrollment, health questionnaires, a 3,800-person intranet. I win arguments with evidence, not taste.',
+             'Cuatro años convirtiendo procesos regulados y llenos de fricción en flujos que la gente sí termina: afiliación a seguros, cuestionarios de salud, una intranet de 3.800 personas. Gano las discusiones con evidencia, no con gusto.'),
+    'meta': [L('<i class="dot"></i>Available now', '<i class="dot"></i>Disponible ahora'),
+             L('Cali, Colombia · open to relocating to Bogotá', 'Cali, Colombia · con disponibilidad de traslado a Bogotá'),
              L('English C2 · Spanish native', 'Inglés C2 · Español nativo')],
     'cta1': L('See the work ↓', 'Ver los casos ↓'),
     'cta2': L('Email me', 'Escríbeme'),
@@ -36,9 +36,9 @@ STATS = {
     'intro': L('I measure work by what it changes: who gets included, what stops breaking, which decision moved. Every number here comes from a test, an inventory or a delivered artifact.',
                'Mido el trabajo por lo que cambia: a quién incluye, qué deja de romperse, qué decisión se movió. Cada número sale de una prueba, un inventario o un entregable real.'),
     'bars': [
-        ('6', L('Years designing digital products — UI, UX and research', 'Años diseñando productos digitales: UI, UX e investigación')),
+        ('4', L('Years of professional work in UI, UX and research', 'Años de trabajo profesional en UI, UX e investigación')),
         ('23', L('Participants in an unmoderated usability test I designed and ran', 'Participantes en una prueba de usabilidad no moderada que diseñé y ejecuté')),
-        ('27%', L('Didn’t realize enrollment continued after paying — the finding that changed the flow', 'No entendieron que la afiliación seguía después de pagar: el hallazgo que cambió el flujo')),
+        ('27%', L('Didn’t realize enrollment continued after paying. The finding that changed the flow', 'No entendieron que la afiliación seguía después de pagar. El hallazgo que cambió el flujo')),
         ('124', L('Severity-rated heuristic findings on a 200+ screen banking platform', 'Hallazgos heurísticos clasificados por severidad en una plataforma bancaria de más de 200 pantallas')),
         ('3,832', L('Employees in 21 areas served by the intranet I helped redesign', 'Colaboradores de 21 áreas que usan la intranet que ayudé a rediseñar')),
         ('+44%', L('Intranet coverage after I split it into a full and a light version', 'De cubrimiento de la intranet tras dividirla en versión completa y ligera')),
@@ -49,7 +49,7 @@ STATS_ES_NUM = {'3,832': '3.832'}
 
 WORK = {
     'label': L('Case studies', 'Casos de estudio'),
-    'intro': L('Each case follows the same spine: the context, the problem as it was handed to me, the evidence, the hard call and what actually happened — including what didn’t ship. Client names are withheld where an NDA applies.',
+    'intro': L('Each case follows the same spine: the context, the problem as it was handed to me, the evidence, the hard call and what actually happened, including what didn’t ship. Client names are withheld where an NDA applies.',
                'Cada caso sigue la misma columna: el contexto, el problema tal como me llegó, la evidencia, la decisión difícil y lo que pasó de verdad, incluido lo que no salió. Donde hay acuerdo de confidencialidad, el cliente va anónimo.'),
     'see': L('Read the case', 'Leer el caso'),
 }
@@ -60,7 +60,7 @@ PRINCIPLES = {
                'Cuatro hábitos que aparecen en todos los proyectos. Son la razón por la que los casos se leen más como bitácoras de decisiones que como galerías.'),
     'items': [
         (L('Design the unhappy path first', 'Diseñar primero el camino que falla'),
-         L('Invalid coverage, exceeded limits, a dropped connection, a failed OTP. I delivered those exception flows as their own artifact on a project where nobody had scoped them — because that’s where real users end up.',
+         L('Invalid coverage, exceeded limits, a dropped connection, a failed OTP. I delivered those exception flows as their own artifact on a project where nobody had scoped them, because that’s where real users end up.',
            'Cobertura inválida, límites excedidos, una conexión caída, un OTP fallido. Entregué esos flujos de excepción como un artefacto propio en un proyecto donde nadie los había definido, porque ahí es donde termina la gente real.'),
          'esencial-dental'),
         (L('Bring evidence into the room', 'Llevar evidencia a la reunión'),
@@ -68,7 +68,7 @@ PRINCIPLES = {
            'Mis dos decisiones más difíciles en una gran aseguradora de salud se ganaron igual: con datos de prueba y patrones documentados de otras empresas, no con mi opinión contra la de un stakeholder.'),
          'salud-activa'),
         (L('Scope is a design decision', 'El alcance también es diseño'),
-         L('On an intranet redesign I rewrote my own objective into something measurable, then proposed a second version of the product that added cost — and brought 44% more of the company into it.',
+         L('On an intranet redesign I rewrote my own objective into something measurable, then proposed a second version of the product that added cost, and brought 44% more of the company into it.',
            'En el rediseño de una intranet reescribí mi propio objetivo para que fuera medible, y luego propuse una segunda versión del producto que sumaba costo, y que metió al 44% más de la empresa.'),
          'tqnet'),
         (L('Write down what nobody owns', 'Dejar por escrito lo que nadie asume'),
@@ -90,20 +90,20 @@ ABOUT = {
              L('Figma · FigJam · Maze · Notion · HTML &amp; CSS', 'Figma · FigJam · Maze · Notion · HTML y CSS')],
     'exp_label': L('Experience', 'Experiencia'),
     'exp': [
-        (L('Oct 2025 – Oct 2026', 'oct 2025 – oct 2026'), L('Product Designer (UX/UI) — Indra Group', 'Diseñadora de Producto (UX/UI) — Indra Group'),
+        (L('Oct 2025 to Oct 2026', 'oct 2025 a oct 2026'), L('Product Designer (UX/UI) · Indra Group', 'Diseñadora de Producto (UX/UI) · Indra Group'),
          L('Three digital-sales products for a multinational health company: two plan enrollments, a health questionnaire and a new preventive-health policy.', 'Tres productos de venta digital para una multinacional del sector salud: dos afiliaciones a planes, un cuestionario de salud y una póliza nueva de salud preventiva.')),
-        (L('Apr – Sep 2026', 'abr – sep 2026'), L('Marketing Growth Lead — XTAM', 'Marketing Growth Lead — XTAM'),
+        (L('Apr to Sep 2026', 'abr a sep 2026'), L('Marketing Growth Lead · XTAM', 'Marketing Growth Lead · XTAM'),
          L('Built the marketing function of a B2B AI consultancy from zero, reporting to the founders. Concurrent with Indra.', 'Construí desde cero el área de mercadeo de una consultora B2B de IA, reportando a los founders. En paralelo con Indra.')),
-        (L('Jan – Jul 2025', 'ene – jul 2025'), L('Internal Communications &amp; UX intern — Tecnoquímicas', 'Practicante de Comunicación Interna y UX — Tecnoquímicas'),
+        (L('Jan to Jul 2025', 'ene a jul 2025'), L('Internal Communications &amp; UX intern · Tecnoquímicas', 'Practicante de Comunicación Interna y UX · Tecnoquímicas'),
          L('Professional internship on the TQNet intranet redesign.', 'Práctica profesional en el rediseño de la intranet TQNet.')),
-        (L('2024', '2024'), L('UX/UI Designer — UX Lab, Universidad Icesi', 'Diseñadora UX/UI — UX Lab, Universidad Icesi'),
+        (L('2024', '2024'), L('UX/UI Designer · UX Lab, Universidad Icesi', 'Diseñadora UX/UI · UX Lab, Universidad Icesi'),
          L('Client prototypes, usability tests and heuristic evaluations presented to stakeholders.', 'Prototipos para clientes, pruebas de usabilidad y evaluaciones heurísticas presentadas a stakeholders.')),
-        (L('2023 – 2025', '2023 – 2025'), L('Service Experience Specialist — TaskUs', 'Service Experience Specialist — TaskUs'),
+        (L('2023 to 2025', '2023 a 2025'), L('Service Experience Specialist · TaskUs', 'Service Experience Specialist · TaskUs'),
          L('High-volume English-language support against quality standards and SLAs.', 'Atención de alto volumen en inglés con estándares de calidad y SLA.')),
-        (L('2020 – 2024', '2020 – 2024'), L('Freelance UX/UI &amp; brand designer', 'Diseñadora UX/UI y de marca independiente'),
+        (L('2022 to 2024', '2022 a 2024'), L('Freelance UX/UI &amp; brand designer', 'Diseñadora UX/UI y de marca independiente'),
          L('Research, prototypes, identity systems and brand manuals for emerging brands.', 'Investigación, prototipos, sistemas de identidad y manuales de marca para marcas emergentes.')),
-        (L('2018 – 2025', '2018 – 2025'), L('BA Interactive Media Design · BA International Marketing &amp; Advertising', 'Diseño de Medios Interactivos · Mercadeo Internacional y Publicidad'),
-         L('Universidad Icesi, Cali — two degrees, completed concurrently.', 'Universidad Icesi, Cali: dos carreras, cursadas en paralelo.')),
+        (L('2018 to 2025', '2018 a 2025'), L('BA Interactive Media Design · BA International Marketing &amp; Advertising', 'Diseño de Medios Interactivos · Mercadeo Internacional y Publicidad'),
+         L('Universidad Icesi, Cali. Two degrees, completed concurrently.', 'Universidad Icesi, Cali: dos carreras, cursadas en paralelo.')),
     ],
 }
 

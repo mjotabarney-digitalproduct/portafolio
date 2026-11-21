@@ -47,12 +47,12 @@ def header(lang, depth, alt_href, home_href):
     links = ''.join(f'<a class="{"hide-s" if i in (1,2) else ""}" href="{home_href}{h}">{t(lbl, lang)}</a>' for i, (h, lbl) in enumerate(NAV))
     other = 'ES' if lang == 'en' else 'EN'
     return f'''<header class="site-head"><div class="wrap">
-<a class="brand" href="{home_href}">{SITE['name']}</a>
+<a class="brand" href="{home_href}" aria-label="{SITE['name']}">María <em>José</em> Barney</a>
 <nav class="nav" aria-label="{'Main' if lang=='en' else 'Principal'}">{links}<a class="lang" href="{alt_href}" hreflang="{other.lower()}" lang="{other.lower()}">{other}</a></nav>
 </div></header>
 '''
 
-def contact(lang):
+def contact(lang, depth):
     c = CONTACT
     return f'''<section class="contact" id="contact"><div class="wrap">
 <span class="label">{t(c['label'], lang)}</span>
@@ -61,6 +61,7 @@ def contact(lang):
 <a class="btn solid" href="mailto:{SITE['email']}">{SITE['email']} ↗</a>
 <a class="btn" href="{SITE['linkedin']}" target="_blank" rel="noopener">LinkedIn ↗</a>
 <a class="btn" href="{SITE['behance']}" target="_blank" rel="noopener">Behance ↗</a>
+<a class="btn" href="{prefix(None, depth)}assets/cv/{'Maria_Jose_Barney_CV_Product_Designer_Nu_ENG' if lang=='en' else 'Maria_Jose_Barney_CV_Product_Designer_2026_ESP'}.pdf" target="_blank" rel="noopener">{'CV (PDF)' if lang=='en' else 'Hoja de vida (PDF)'} ↓</a>
 </div>
 <div class="fine"><span>{t(c['fine_l'], lang)}</span><span>{t(c['fine_r'], lang)}</span></div>
 </div></section>
@@ -75,7 +76,7 @@ def home(lang):
     r = prefix(lang, depth)
     alt = 'es/' if lang == 'en' else '../'
     home_href = './'
-    title = f"{SITE['name']} — {t(SITE['role'], lang).replace('&amp;','&')}"
+    title = f"{SITE['name']} | {t(SITE['role'], lang).replace('&amp;','&')}"
     h = head(lang, title, t(SITE['desc'], lang), depth, alt, home_href) + header(lang, depth, alt, home_href)
     meta = ''.join(f'<span>{t(m, lang)}</span>' for m in HERO['meta'])
     h += f'''<main id="main">
@@ -131,7 +132,7 @@ def home(lang):
 </div></section>
 </main>
 '''
-    h += contact(lang) + foot(depth)
+    h += contact(lang, depth) + foot(depth)
     return h
 
 # ---------------------------------------------------------------- case
@@ -162,7 +163,7 @@ def case(c, idx, lang):
     r = prefix(lang, depth)
     base = r + ('' if lang == 'en' else 'es/')
     alt = r + ('es/' if lang == 'en' else '') + f"work/{c['slug']}/"
-    title = f"{t(c['title'], lang)} — {SITE['name']}"
+    title = f"{t(c['title'], lang)} | {SITE['name']}"
     h = head(lang, title, t(c['card'], lang), depth, alt, base) + header(lang, depth, alt, base)
     tags = ''.join(f'<span class="pill">{t(x, lang)}</span>' for x in [c['year']] + c['tags'])
     facts = ''.join(f'<div><dt>{t(a, lang)}</dt><dd>{t(b, lang)}</dd></div>' for a, b in c['facts'])
@@ -192,7 +193,7 @@ def case(c, idx, lang):
     h += f'''<a class="next" href="{base}work/{nxt['slug']}/"><div class="wrap"><span class="mono">{nl} →</span><h3>{t(nxt['title'], lang)}</h3></div></a>
 </main>
 '''
-    h += contact(lang) + foot(depth)
+    h += contact(lang, depth) + foot(depth)
     return h
 
 def write(path, html):
