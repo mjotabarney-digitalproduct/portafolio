@@ -3,7 +3,7 @@
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from content_home import SITE, NAV, HERO, STATS, STATS_ES_NUM, WORK, PRINCIPLES, ABOUT, CONTACT
+from content_home import SITE, NAV, HERO, STATS, STATS_ES_NUM, WORK, BEHANCE, PRINCIPLES, ABOUT, CONTACT
 from content_cases import CASES, NDA, NDA_TQ
 
 ASSETS = os.path.join(ROOT, 'assets')
@@ -115,7 +115,12 @@ def home(lang):
 '''
     h += f'''<section class="sec cases" id="work"><div class="wrap">
 <div class="sec-head"><span class="label">{t(WORK['label'], lang)}</span><p>{t(WORK['intro'], lang)}</p></div>
-{cards}</div></section>
+{cards}
+<a class="behance reveal" href="{SITE['behance']}" target="_blank" rel="noopener">
+<div><span class="label">{t(BEHANCE['label'], lang)}</span><h3>{t(BEHANCE['h'], lang)}</h3><p>{t(BEHANCE['p'], lang)}</p></div>
+<span class="btn solid">{t(BEHANCE['cta'], lang)}</span>
+</a>
+</div></section>
 '''
     slugs = {c['slug']: c for c in CASES}
     pr = ''

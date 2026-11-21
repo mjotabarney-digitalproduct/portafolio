@@ -60,6 +60,14 @@ WORK = {
     'see': L('Read the case', 'Leer el caso'),
 }
 
+BEHANCE = {
+    'label': L('More work', 'Más trabajo'),
+    'h': L('Collaborative case studies, <em>on Behance.</em>', 'Casos colaborativos, <em>en Behance.</em>'),
+    'p': L('Projects designed together with other designers, developers and clients across fintech, energy and digital products, with the full visual process.',
+           'Proyectos diseñados junto a otras diseñadoras, desarrolladores y clientes en fintech, energía y productos digitales, con todo el proceso visual.'),
+    'cta': L('See them on Behance ↗', 'Verlos en Behance ↗'),
+}
+
 PRINCIPLES = {
     'label': L('How I think', 'Cómo pienso'),
     'intro': L('Four habits that show up in every project below. They’re the reason the case studies read more like decision logs than galleries.',

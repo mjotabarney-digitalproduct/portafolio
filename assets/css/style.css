@@ -207,3 +207,13 @@ figcaption b{color:var(--wine);font-weight:500}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+.behance{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;text-decoration:none;border:1px solid var(--ink);border-radius:14px;padding:clamp(24px,3vw,40px);margin-top:36px;background:var(--paper);position:relative;overflow:hidden;transition:background .25s}
+.behance::after{content:"J";position:absolute;right:22%;top:-.32em;font-family:var(--serif);font-style:italic;font-size:300px;line-height:1;color:#EADCCB;pointer-events:none;z-index:0}
+.behance>*{position:relative;z-index:1}
+.behance h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.05;margin:.4em 0 .3em}
+.behance h3 em{color:var(--purple)}
+.behance p{margin:0;max-width:52ch;font-size:17px;color:#4d2a24}
+.behance .btn.solid{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+.behance:hover{background:#fff8f0}
+.behance:hover .btn.solid{background:var(--peri);color:var(--ink);border-color:var(--peri)}
