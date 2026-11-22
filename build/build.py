@@ -95,7 +95,7 @@ def home(lang):
 <div class="meta">{meta}</div>
 </div></section>
 '''
-    bars = ''.join(f'<div class="bar reveal"><b>{num(n, lang)}</b><span>{t(lbl, lang)}</span></div>' for n, lbl in STATS['bars'])
+    bars = ''.join(f'<div class="bar reveal"><b>{num(n, lang)}</b><span><strong>{t(ttl, lang)}</strong>' + (f'<small>{t(sub, lang)}</small>' if sub else '') + '</span></div>' for n, ttl, sub in STATS['bars'])
     h += f'''<section class="sec stats"><div class="wrap grid">
 <div class="intro"><span class="label">{t(STATS['label'], lang)}</span><p>{t(STATS['intro'], lang)}</p></div>
 <div class="bars">{bars}</div>
