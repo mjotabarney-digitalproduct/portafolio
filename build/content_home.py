@@ -37,9 +37,10 @@ STATS = {
                'Algunos resultados de proyectos recientes, cada uno ligado a una decisión que tomé.'),
     # (number, title, subtext or None)
     'bars': [
-        ('4', L('Years of professional product design across insurance, health, a corporate intranet and a B2B startup',
-                'Años de diseño de producto profesional en seguros, salud, una intranet corporativa y una startup B2B'), None),
-        ('3', L('Insurance products, end to end', 'Productos de seguros, de punta a punta'), None),
+        ('4', L('Years of professional product design', 'Años de diseño de producto profesional'),
+              L('Across insurance, health, a corporate intranet and a B2B startup.', 'En seguros, salud, una intranet corporativa y una startup B2B.')),
+        ('3', L('Insurance products, end to end', 'Productos de seguros, de punta a punta'),
+              L('For a multinational health company, from research to development handoff.', 'Para una multinacional del sector salud, desde la investigación hasta la entrega a desarrollo.')),
         ('95%', L('Fewer answers in a health questionnaire', 'Menos respuestas en un cuestionario de salud'),
                 L('Up to 20 people answer once together, 31 answers instead of 620.', 'Hasta 20 personas responden una sola vez en conjunto: 31 respuestas en lugar de 620.')),
         ('+44%', L('Intranet coverage', 'Cubrimiento de la intranet'),
