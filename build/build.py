@@ -162,8 +162,8 @@ def render_block(b, lang, r):
             if not has(i): missing.append(i)
         if not ok: return ''
         frames = ''.join(f'<div class="frame"><img src="{r}assets/{v(i)}" alt="{t(cap, lang)}" loading="lazy"></div>' for i in ok)
-        cls = ('combo pair' if kind == 'combo' else 'pair') if len(ok) > 1 else kind
-        inner = f'<div class="frames">{frames}</div>' if len(ok) > 1 else frames
+        cls = ('combo pair' if kind == 'combo' else 'pair') if len(ok) > 1 and kind != 'bare' else kind
+        inner = f'<div class="frames">{frames}</div>' if len(ok) > 1 and kind != 'bare' else frames
         return f'<figure class="{cls}">{inner}<figcaption>{t(cap, lang)}</figcaption></figure>'
     raise ValueError(k)
 
@@ -178,6 +178,8 @@ def case(c, idx, lang):
     facts = ''.join(f'<div><dt>{t(a, lang)}</dt><dd>{t(b, lang)}</dd></div>' for a, b in c['facts'])
     tldr = ''.join(f'<div><h4>{t(a, lang)}</h4><p>{t(b, lang)}</p></div>' for a, b in c['tldr'])
     hero_cls = c['color']
+    hc = c.get('hero', c['cover'])
+    cover = f'<div class="wrap"><figure class="case-cover"><div class="frame"><img src="{r}assets/{v(hc)}" alt="{t(c["title"], lang)}"></div></figure></div>' if has(hc) else ''
     back = 'All work' if lang == 'en' else 'Todos los casos'
     h += f'''<main id="main">
 <section class="case-hero {hero_cls}"><div class="wrap">
@@ -187,7 +189,7 @@ def case(c, idx, lang):
 <p class="dek">{t(c['dek'], lang)}</p>
 <dl class="facts">{facts}</dl>
 </div></section>
-<div class="wrap"><div class="tldr">{tldr}</div></div>
+{cover}<div class="wrap"><div class="tldr">{tldr}</div></div>
 <article class="article"><div class="wrap">
 '''
     for i, s in enumerate(c['sections'], 1):

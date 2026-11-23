@@ -1,7 +1,7 @@
 # Case study content. Block types:
 # ('p', L), ('pull', L), ('ul', [L...]), ('steps', [L...]), ('callout', L title, [L...]),
 # ('honest', L title, L text), ('kpis', [(num, L label)]), ('compare', (L t, L p), (L t, L p)),
-# ('fig', kind, [img paths], L caption)   kind: wide | pair | combo
+# ('fig', kind, [img paths], L caption)   kind: wide | pair | combo | bare
 from content_home import L
 
 NDA_TQ = L('Screens shown with the company’s branding, sales figures and employee names removed and recoloured, as internal material.', 'Pantallas sin la marca de la empresa, sin cifras de ventas ni nombres de colaboradores, y recoloreadas, por ser material interno.')
@@ -44,6 +44,7 @@ CASES = [
             'Mis dos primeros proyectos con este cliente fueron flujos de venta. Este era un producto completo para <em>prevenir</em> la enfermedad: tres planes, médico familiar y exámenes con cupos, coaching virtual ilimitado, línea psicosocial, comunidad y una plataforma con contenidos, índice de salud, retos y recompensas.')),
     ('p', L('It was a priority for the client’s leadership, with a December date. New product, high visibility, fixed date: exactly where undefined decisions quietly land on design.',
             'Era prioridad para la dirección del cliente y tenía fecha en diciembre. Producto nuevo, mucha visibilidad y fecha fija: justo donde las decisiones sin definir caen en silencio sobre diseño.')),
+    ('fig', 'bare', ['img/bienestar/plans.jpg'], L('The landing where each plan is compared before buying.', 'La landing donde se comparan los planes antes de comprar.')),
    ]},
   {'side': L('Research', 'Investigación'), 'title': L('A benchmark of markets, not of screens', 'Un benchmark de mercados, no de pantallas'),
    'body': [
@@ -62,6 +63,7 @@ CASES = [
     ('pull', L('The user would pay in one product and wake up in another. Nobody’s backlog contained the walk between them.', 'El usuario iba a pagar en un producto y despertar en otro. Ningún backlog contenía el camino entre los dos.')),
     ('p', L('I couldn’t change the vendor architecture from design, but I could make the gap impossible to miss: I documented it with its implications in its own section of the handoff, so it would be treated as a product decision instead of discovered in production.',
             'No podía cambiar la arquitectura de proveedores desde diseño, pero sí hacer imposible ignorar el hueco: lo documenté con sus implicaciones en una sección propia del handoff, para que se tratara como decisión de producto y no se descubriera en producción.')),
+    ('fig', 'bare', ['img/bienestar/sales-flow.jpg'], L('The purchase flow, prototyped end to end in the sales portal.', 'El flujo de compra, prototipado de punta a punta en el portal de venta.')),
    ]},
   {'side': L('Design', 'Diseño'), 'title': L('Business rules a person can read', 'Reglas de negocio que una persona pueda leer'),
    'body': [
@@ -74,9 +76,10 @@ CASES = [
       L('<strong>Accessibility by default:</strong> contrast, text size and a pause control on the auto-advancing carousel.', '<strong>Accesibilidad por defecto:</strong> contraste, tamaño de texto y pausa en el carrusel automático.'),
       L('<strong>Consistent screen naming</strong>, so developers and my successor always meant the same screen.', '<strong>Nomenclatura de pantallas</strong> consistente, para que desarrollo y mi reemplazo hablaran de la misma pantalla sin confusión.'),
     ]),
-    ('fig', 'wide', ['img/bienestar/app-score.jpg'], L('The diagnostic moves one dimension at a time and ends in the score and the Wheel of Life.', 'El diagnóstico avanza una dimensión a la vez y termina en el puntaje y la Rueda de la Vida.')),
-    ('fig', 'wide', ['img/bienestar/app-appointments.jpg'], L('Booking a family doctor: the yearly balance opens the flow and updates on confirmation.', 'Agendar con médico familiar: el saldo del año abre el flujo y se actualiza al confirmar.')),
-    ('fig', 'wide', ['img/bienestar/app-wellness.jpg'], L('Wellness classes: the same quota logic, applied to another service.', 'Clases de wellness: la misma lógica de cupos, aplicada a otro servicio.')),
+    ('fig', 'bare', ['img/bienestar/app-score.jpg'], L('The diagnostic moves one dimension at a time and ends in the score and the Wheel of Life.', 'El diagnóstico avanza una dimensión a la vez y termina en el puntaje y la Rueda de la Vida.')),
+    ('fig', 'bare', ['img/bienestar/app-appointments.jpg'], L('Booking a family doctor: the yearly balance opens the flow and updates on confirmation.', 'Agendar con médico familiar: el saldo del año abre el flujo y se actualiza al confirmar.')),
+    ('fig', 'bare', ['img/bienestar/app-wellness.jpg'], L('Wellness classes: the same quota logic, applied to another service.', 'Clases de wellness: la misma lógica de cupos, aplicada a otro servicio.')),
+    ('fig', 'bare', ['img/bienestar/app-pqr.jpg'], L('Requests and claims: the same pattern, so nobody has to learn a new screen.', 'Peticiones y reclamos: el mismo patrón, para que nadie aprenda una pantalla nueva.')),
    ]},
   {'side': L('The hard call', 'La decisión difícil'), 'title': L('Six scope changes nobody filed', 'Seis cambios de alcance que nadie tramitó'),
    'body': [
@@ -111,7 +114,7 @@ CASES = [
  'title': L('Adding friction at checkout, on purpose', 'Agregar fricción en el pago, a propósito'),
  'card': L('In a health plan checkout, 27% of participants thought they were done once they paid. The fix added friction at the most expensive point of the funnel, and it was adopted.',
            'En la compra de un plan de salud, el 27% de los participantes creyó que había terminado al pagar. La solución agregó fricción en el punto más caro del funnel, y se adoptó.'),
- 'cover': 'img/esencial/modal-desktop.jpg',
+ 'cover': 'img/esencial/cover.jpg',
  'dek': L('Moving online sales for two health plans from a third-party tool to the client’s own platform. I designed the flow, tested it with 23 people and argued for the one change nobody wanted near the payment button.',
           'Pasar la venta en línea de dos planes de salud de una herramienta de terceros a la plataforma propia del cliente. Diseñé el flujo, lo probé con 23 personas y defendí el único cambio que nadie quería cerca del botón de pago.'),
  'facts': [
@@ -147,8 +150,8 @@ CASES = [
             'Nadie había definido qué pasa cuando algo falla: <strong>cobertura inválida, límites excedidos, errores de conexión y código fallido</strong>. Diseñé esos caminos y los entregué como artefacto propio, para que desarrollo construyera más allá del camino feliz.')),
     ('p', L('I applied WCAG 2.1 A and AA during design: the contrast and text-size controls are visible in the prototype.',
             'Apliqué WCAG 2.1 A y AA durante el diseño: los controles de contraste y tamaño de texto se ven en el prototipo.')),
-    ('fig', 'wide', ['img/esencial/flow-canvas.jpg'], L('The flow by step, each column ready for development.', 'El flujo por paso, cada columna lista para desarrollo.')),
-    ('fig', 'combo', ['img/esencial/beneficiaries.jpg', 'img/esencial/otp-mobile.jpg'], L('Beneficiaries with the purchase summary, and the code on mobile with a resend timer.', 'Beneficiarios con el resumen de compra, y el código en móvil con temporizador.')),
+    ('fig', 'bare', ['img/esencial/flow-canvas.jpg'], L('The flow by step, each column ready for development.', 'El flujo por paso, cada columna lista para desarrollo.')),
+    ('fig', 'bare', ['img/esencial/mobile-flow.jpg'], L('The mobile journey, from beneficiaries to the code with a resend timer.', 'El recorrido en móvil, de los beneficiarios al código con temporizador de reenvío.')),
    ]},
   {'side': L('Evidence', 'Evidencia'), 'title': L('Testing the hypothesis, not the colors', 'Probar la hipótesis, no los colores'),
    'body': [
@@ -174,7 +177,7 @@ CASES = [
                 (L('The reframe', 'El reencuadre'), L('They were arguing the same risk I was, in reverse. I answered with the test and with evidence of how this interaction reduces abandonment.', 'Argumentaban el mismo riesgo que yo, al revés. Respondí con la prueba y con evidencia de cómo esta interacción reduce el abandono.'))),
     ('p', L('It was adopted, with the test’s other three fixes: clearer “Add beneficiary”, saving with confirmation and a clarification on the last step.',
             'Se adoptó, junto con las otras tres mejoras de la prueba: mejor señalización de “Agregar beneficiario”, guardado con confirmación y una aclaración en el último paso.')),
-    ('fig', 'combo', ['img/esencial/modal-desktop.jpg', 'img/esencial/modal-mobile.jpg'], L('The step on desktop and as a bottom sheet on mobile: what’s missing, why it matters and how to come back.', 'El paso en desktop y como bottom sheet en móvil: qué falta, por qué importa y cómo volver.')),
+    ('fig', 'bare', ['img/esencial/modal.jpg'], L('The step on desktop and as a bottom sheet on mobile: what’s missing, why it matters and how to come back.', 'El paso en desktop y como bottom sheet en móvil: qué falta, por qué importa y cómo volver.')),
    ]},
   {'side': L('Outcome', 'Resultado'), 'title': L('What I can and can’t show', 'Lo que puedo y no puedo mostrar'),
    'body': [
@@ -191,7 +194,7 @@ CASES = [
  'title': L('Ask once, not twenty times', 'Preguntar una vez, no veinte'),
  'card': L('A health questionnaire for policies of up to 20 people. Instead of repeating each question per person, I flipped the question, and it beat an easier-to-build option.',
            'Un cuestionario de salud para pólizas de hasta 20 personas. En lugar de repetir cada pregunta por persona, invertí la pregunta, y le ganó a una opción más fácil de desarrollar.'),
- 'cover': 'img/salud/questionnaire-canvas.jpg',
+ 'cover': 'img/salud/cover.jpg',
  'dek': L('The next plan to move onto the new flow came with a long health questionnaire. With up to 20 people per policy, the problem was multiplication.',
           'El siguiente plan en pasar al nuevo flujo traía un cuestionario de salud largo. Con hasta 20 personas por póliza, el problema era la multiplicación.'),
  'facts': [
@@ -221,7 +224,8 @@ CASES = [
                 (L('After · per question', 'Después · por pregunta'), L('“Has anyone on the policy been hospitalized?” Yes → “Select who.” Anyone not selected is a No, and details are asked only for the yeses.', '“¿Alguien de la póliza ha estado hospitalizado?” Sí → “Selecciona quiénes”. Quien no se selecciona es un No, y los detalles se piden solo para los sí.'))),
     ('p', L('The common case, healthy people, gets the shortest path: one answer covers the whole family. I also redesigned the review: a summary in accordions by specialty with inline editing, so nobody starts over.',
             'El caso común, personas sanas, tiene el camino más corto: una respuesta cubre a toda la familia. Rediseñé también la revisión: un resumen en acordeones por especialidad con edición en línea, para no empezar de nuevo.')),
-    ('fig', 'wide', ['img/salud/questionnaire-canvas.jpg'], L('One yes or no for the group, then “select who.”', 'Un sí o no para el grupo, y luego “selecciona quiénes”.')),
+    ('fig', 'bare', ['img/salud/questionnaire.jpg'], L('One yes or no for the group, then “select who.”', 'Un sí o no para el grupo, y luego “selecciona quiénes”.')),
+    ('fig', 'bare', ['img/salud/answer-types.jpg'], L('Each answer type was designed for the medical information it asked for: mutually exclusive options, several that apply at once or open answers, always only for those it applies to.', 'Cada tipo de respuesta se diseñó según la información médica que pedía: opciones excluyentes, varias que aplican a la vez o respuestas abiertas, siempre solo para quien aplica.')),
    ]},
   {'side': L('The hard call', 'La decisión difícil'), 'title': L('Easier to build versus easier to finish', 'Más fácil de construir contra más fácil de terminar'),
    'body': [
@@ -232,13 +236,13 @@ CASES = [
       L('<strong>The arithmetic</strong> of answers saved: on a 20-person policy, 31 instead of 620.', '<strong>La aritmética</strong> de cuántas respuestas se ahorraban: en una póliza de 20 personas, 31 en lugar de 620.'),
     ]),
     ('p', L('The inverted model became the final one.', 'El modelo invertido quedó como el final.')),
-    ('fig', 'wide', ['img/salud/flow-comments.jpg'], L('The full step, reviewed with the team’s comments before going to development.', 'El paso completo, revisado con los comentarios del equipo antes de ir a desarrollo.')),
+    ('fig', 'bare', ['img/salud/flow-comments.jpg'], L('The full step, reviewed with the team’s comments before going to development.', 'El paso completo, revisado con los comentarios del equipo antes de ir a desarrollo.')),
    ]},
   {'side': L('Beyond the screen', 'Fuera de la pantalla'), 'title': L('Part of the flow happens in the inbox', 'Parte del flujo ocurre en el correo'),
    'body': [
     ('p', L('The code, a rejected payment or the reminder to finish arrive by email. The business gave me the content and I proposed the design, in desktop and responsive and by process state. The 48-hour window was set by the business.',
             'El código, un pago rechazado o el recordatorio para terminar llegan por correo. El negocio me dio el contenido y yo propuse el diseño, en desktop y responsive y por estado del proceso. La ventana de 48 horas la definió el negocio.')),
-    ('fig', 'wide', ['img/salud/email.jpg'], L('Rejected-payment emails, each with one action to retry.', 'Correos de pago rechazado, cada uno con una sola acción para reintentar.')),
+    ('fig', 'bare', ['img/salud/emails.jpg'], L('The verification code email and the rejected-payment emails, each with one action.', 'El correo del código de verificación y los de pago rechazado, cada uno con una sola acción.')),
    ]},
   {'side': L('Outcome', 'Resultado'), 'title': L('One design, two plans', 'Un diseño, dos planes'),
    'body': [
@@ -255,7 +259,7 @@ CASES = [
  'title': L('An intranet for the people who couldn’t reach it', 'Una intranet para quienes no podían entrar'),
  'card': L('A 3,832-person intranet not redesigned since 2016. The inventory showed who it left out, and splitting it into two versions raised coverage 44%.',
            'Una intranet de 3.832 personas sin rediseñar desde 2016. El inventario mostró a quién dejaba por fuera, y dividirla en dos versiones subió el cubrimiento un 44%.'),
- 'cover': 'img/tqnet/cover.jpg',
+ 'cover': 'img/tqnet/tour.jpg',
  'dek': L('Tecnoquímicas’ intranet is one of its main internal channels: 21 areas, 66 systems and 33 services, not redesigned since 2016. I was part of the redesign during its UX design phase.',
           'La intranet de Tecnoquímicas es uno de sus principales canales internos: 21 áreas, 66 sistemas y 33 servicios, sin rediseño desde 2016. Hice parte del rediseño en la fase de diseño UX.'),
  'facts': [
@@ -302,9 +306,9 @@ CASES = [
     ('pull', L('The main internal channel only worked for people on the network. Plant staff, the bulk of the company, were left out.', 'El principal canal interno solo funcionaba para quien estaba en la red. El personal de planta, el grueso de la empresa, quedaba por fuera.')),
     ('p', L('I proposed two versions: <strong>full</strong>, from the internal network, and <strong>light</strong>, from outside, with access by a code sent by email or SMS. IT defined the access with us and an initial purchase of 100,000 SMS was approved.',
             'Propuse dos versiones: <strong>completa</strong>, desde la red interna, y <strong>ligera</strong>, desde fuera, con acceso por código por correo o SMS. TI definió el acceso con nosotros y se aprobó una compra inicial de 100.000 SMS.')),
-    ('fig', 'wide', ['img/tqnet/segmentation.jpg'], L('The architecture as two maps: full and light.', 'La arquitectura en dos mapas: completa y ligera.')),
-    ('fig', 'wide', ['img/tqnet/before.jpg'], L('Before: the 2016 intranet, with a horizontal menu and dense content.', 'Antes: la intranet de 2016, con un menú horizontal y contenido denso.')),
-    ('fig', 'wide', ['img/tqnet/after.jpg'], L('After: side navigation, cards, an internal feed and customizable shortcuts.', 'Después: navegación lateral, tarjetas, un feed interno y accesos personalizables.')),
+    ('fig', 'bare', ['img/tqnet/segmentation.jpg'], L('The architecture as two maps: full and light.', 'La arquitectura en dos mapas: completa y ligera.')),
+    ('fig', 'bare', ['img/tqnet/access.jpg'], L('The code-based entry for people outside the network, and the directory that same person can now browse.', 'La entrada con código para quien está fuera de la red, y el directorio que esa misma persona ahora puede consultar.')),
+    ('fig', 'bare', ['img/tqnet/before-after.jpg'], L('Before and after: from the 2016 horizontal menu to side navigation, cards, an internal feed and customizable shortcuts.', 'Antes y después: del menú horizontal de 2016 a la navegación lateral, las tarjetas, un feed interno y accesos personalizables.')),
    ]},
   {'side': L('The hard call', 'La decisión difícil'), 'title': L('Two versions means twice the cost', 'Dos versiones significan el doble de costo'),
    'body': [
@@ -325,6 +329,8 @@ CASES = [
     ('p', L('Also: better usability, an approvals prototype, a stronger channel, a new mobile channel and more closeness for plant staff.',
             'Además: más usabilidad, un prototipo de aprobaciones, un canal más robusto, un canal móvil nuevo y más cercanía para el personal de planta.')),
     ('honest', L('What fell short', 'Lo que no se cumplió'), L('At the close of my time on the project, requirements documentation stood at 37.5% and the KPI framework with IT hadn’t started. I handed over the inventory, the prototype, the HTML/CSS/JS build and the user stories.', 'Al cierre de mi etapa en el proyecto, la documentación de requisitos iba en 37,5% y el marco de KPI con TI no había empezado. Entregué el inventario, el prototipo, la maqueta en HTML/CSS/JS y las historias de usuario.')),
+    ('fig', 'bare', ['img/tqnet/sections.jpg'], L('Services, calendar and lost items, each with its own place.', 'Servicios, calendario y objetos perdidos, cada uno con su lugar.')),
+    ('fig', 'bare', ['img/tqnet/social.jpg'], L('Stories and comment threads, for a more organic intranet.', 'Historias e hilos de comentarios, para una intranet más orgánica.')),
    ]},
  ],
 },
@@ -381,8 +387,7 @@ CASES = [
             '<strong>Art of Possible</strong> fue una cocreación con uno de los cofundadores, que lo presentaba y le abrió camino. Mi parte fue hacer fácil decir que sí: la marca, la producción y las ideas.')),
     ('p', L('The CEO had doubts, so we showed him the potential together: one recording gives a 15-minute cut, five sales teasers and three clips for the guest. He approved it and ended up excited.',
             'El CEO tenía dudas, así que le mostramos juntos el potencial: una grabación da un corte de 15 minutos, cinco teasers de venta y tres clips para el invitado. Lo aprobó y terminó entusiasmado.')),
-    ('fig', 'wide', ['img/xtam/three-outputs.jpg'], L('The post-production brief: three outputs per episode.', 'El brief de postproducción: tres salidas por episodio.')),
-    ('fig', 'wide', ['img/xtam/brandbook.jpg'], L('Brand book: wordmark, six-color palette, templates, motion and an audio sting.', 'Manual de marca: wordmark, paleta de seis colores, plantillas, movimiento y un sting de audio.')),
+    ('fig', 'bare', ['img/xtam/brand.jpg'], L('Brand book: wordmark, six-color palette, templates, motion and an audio sting.', 'Manual de marca: wordmark, paleta de seis colores, plantillas, movimiento y un sting de audio.')),
    ]},
   {'side': L('Craft', 'Oficio'), 'title': L('Small rules with a reason', 'Reglas pequeñas con una razón'),
    'body': [
@@ -392,7 +397,8 @@ CASES = [
       L('<strong>My own rate card.</strong> I scoped the work, negotiated with the vendor and managed the budget.', '<strong>Un rate card propio.</strong> Definí el alcance, negocié con el proveedor y manejé el presupuesto.'),
       L('<strong>One editorial template:</strong> a number, the mechanism, what it means for the reader and a closing line.', '<strong>Una plantilla editorial:</strong> un número, el mecanismo, qué significa para el lector y un cierre.'),
     ]),
-    ('fig', 'wide', ['img/xtam/carousel.jpg'], L('A LinkedIn carousel built on that template.', 'Un carrusel de LinkedIn con esa plantilla.')),
+    ('fig', 'bare', ['img/xtam/production.jpg'], L('The post-production brief: three outputs per episode, clip specs, curation and review.', 'El brief de postproducción: tres salidas por episodio, specs de clip, curaduría y revisión.')),
+    ('fig', 'bare', ['img/xtam/content.jpg'], L('LinkedIn pieces built on that template.', 'Piezas de LinkedIn construidas con esa plantilla.')),
    ]},
   {'side': L('Leaving', 'La salida'), 'title': L('Built to run without me', 'Hecho para funcionar sin mí'),
    'body': [

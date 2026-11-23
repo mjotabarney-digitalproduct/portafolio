@@ -191,6 +191,12 @@ figure.phones .frame img{max-height:640px;width:auto}
 figure.combo .frames{grid-template-columns:2.3fr 1fr;align-items:center}
 figure.combo .frame:last-child img{max-height:560px;width:auto}
 @media (max-width:700px){figure.combo .frames{grid-template-columns:1fr}}
+figure.bare .frame{background:none;border:0;padding:0}
+figure.bare .frame img{border-radius:12px;width:100%}
+figure.bare + figure.bare{margin-top:clamp(18px,2.4vw,28px)}
+.case-cover{margin:0 0 clamp(28px,4vw,48px)}
+.case-cover .frame{cursor:zoom-in}
+.case-cover img{width:100%;border-radius:14px;display:block}
 figcaption{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:80ch}
 figcaption b{color:var(--wine);font-weight:500}
 
