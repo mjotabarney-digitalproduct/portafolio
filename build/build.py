@@ -236,7 +236,7 @@ def me(lang):
 <section class="me-sec reveal"><div class="wrap"><h2>{t(ME['facts_h'], lang)}</h2><div class="me-facts">{facts}</div></div></section>
 <section class="me-now"><div class="wrap"><span class="label">{t(ME['now_label'], lang)}</span><div class="me-now-grid">{now}</div></div></section>
 <section class="me-sec"><div class="wrap"><h2>{t(ME['photos_h'], lang)}</h2><p class="me-lede">{t(ME['photos_lede'], lang)}</p><div class="me-grid">{ph}</div></div></section>
-<a class="next" href="{base}#work"><div class="wrap"><span class="mono">{t(ME['end_link'], lang)} →</span><h3>{t(ME['end'], lang)}</h3></div></a>
+<a class="next me-next" href="{base}#work"><div class="wrap"><span class="mono">{t(ME['end_link'], lang)} →</span><h3>{t(ME['end'], lang)}</h3></div></a>
 </main>
 '''
     h += contact(lang, depth) + foot(depth)
