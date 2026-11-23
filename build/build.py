@@ -3,6 +3,7 @@
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
+from content_me import TEASER, ME
 from content_home import SITE, NAV, HERO, STATS, STATS_ES_NUM, WORK, BEHANCE, PRINCIPLES, ABOUT, CONTACT
 from content_cases import CASES, NDA, NDA_TQ
 
@@ -134,7 +135,10 @@ def home(lang):
     tl = ''.join(f'<li><span class="when">{t(w, lang)}</span><div><b>{t(r_, lang)}</b><small>{t(d, lang)}</small></div></li>' for w, r_, d in ABOUT['exp'])
     q = ''.join(f'<li>{t(x, lang)}</li>' for x in ABOUT['qual'])
     h += f'''<section class="sec about" id="about"><div class="wrap grid">
-<div><span class="label">{t(ABOUT['label'], lang)}</span><ul class="qual">{q}</ul></div>
+<div><span class="label">{t(ABOUT['label'], lang)}</span>
+<span class="sub">{t(TEASER['work'], lang)}</span><ul class="qual">{''.join(f'<li>{t(x, lang)}</li>' for x in TEASER['work_items'])}</ul>
+<span class="sub">{t(TEASER['off'], lang)}</span><ul class="qual">{''.join(f'<li>{t(x, lang)}</li>' for x in TEASER['off_items'])}</ul>
+<a class="meet" href="{'' if lang == 'en' else ''}me/">{t(TEASER['link'], lang)} →</a></div>
 <div><p class="big">{t(ABOUT['big'], lang)}</p><p>{t(ABOUT['body'], lang)}</p>
 <p class="label" style="margin:2.4rem 0 1rem">{t(ABOUT['exp_label'], lang)}</p>
 <ol class="timeline">{tl}</ol></div>
@@ -208,6 +212,32 @@ def case(c, idx, lang):
     h += contact(lang, depth) + foot(depth)
     return h
 
+def me(lang):
+    depth = 1 if lang == 'en' else 2
+    r = prefix(lang, depth)
+    base = r + ('' if lang == 'en' else 'es/')
+    alt = r + ('es/' if lang == 'en' else '') + 'me/'
+    title = f"{t(ME['title'], lang)} | {SITE['name']}"
+    h = head(lang, title, t(ME['desc'], lang), depth, alt, base) + header(lang, depth, alt, base)
+    facts = ''.join(f'<div><b>{t(a, lang)}</b><p>{t(b, lang)}</p></div>' for a, b in ME['facts'])
+    now = ''.join(f'<div><span>{t(a, lang)}</span><p>{t(b, lang)}</p><small>{t(c, lang)}</small></div>' for a, b, c in ME['now'])
+    ph = ''.join(f'<figure><div class="frame"><img src="{r}assets/{v("img/me/" + i + ".jpg")}" alt="{t(c, lang) if c else ""}" loading="lazy"></div>' + (f'<figcaption>{t(c, lang)}</figcaption>' if c else '') + '</figure>' for i, c in ME['photos'])
+    h += f'''<main id="main">
+<section class="me-hero"><div class="wrap"><div>
+<a class="back" href="{base}#about">← {t(ME['back'], lang)}</a>
+<h1>{t(ME['h1'], lang)}</h1>
+<p>{t(ME['intro'], lang)}</p></div>
+<figure class="polaroid"><img src="{r}assets/{v('img/me/portrait.jpg')}" alt="María José Barney"></figure>
+</div></section>
+<section class="me-sec reveal"><div class="wrap"><h2>{t(ME['facts_h'], lang)}</h2><div class="me-facts">{facts}</div></div></section>
+<section class="me-now"><div class="wrap"><span class="label">{t(ME['now_label'], lang)}</span><div class="me-now-grid">{now}</div></div></section>
+<section class="me-sec"><div class="wrap"><h2>{t(ME['photos_h'], lang)}</h2><p class="me-lede">{t(ME['photos_lede'], lang)}</p><div class="me-grid">{ph}</div></div></section>
+<a class="next" href="{base}#work"><div class="wrap"><span class="mono">{t(ME['end_link'], lang)} →</span><h3>{t(ME['end'], lang)}</h3></div></a>
+</main>
+'''
+    h += contact(lang, depth) + foot(depth)
+    return h
+
 def write(path, html):
     p = os.path.join(ROOT, path); os.makedirs(os.path.dirname(p), exist_ok=True)
     open(p, 'w', encoding='utf-8').write(html)
@@ -215,6 +245,7 @@ def write(path, html):
 for lang in ('en', 'es'):
     pre = '' if lang == 'en' else 'es/'
     write(pre + 'index.html', home(lang))
+    write(pre + 'me/index.html', me(lang))
     for i, c in enumerate(CASES):
         write(f"{pre}work/{c['slug']}/index.html", case(c, i, lang))
 print('built. missing images:', sorted(set(missing)) or 'none')
