@@ -81,10 +81,10 @@ EXPERIENCE = {
     'p': L('Six roles across product design, marketing and research, most recent first.',
            'Seis roles entre diseño de producto, mercadeo e investigación, del más reciente al más antiguo.'),
     'items': [
+        ('2026', L('Oct 2025 to Oct 2026', 'oct 2025 a oct 2026'), L('Product Designer (UX/UI)', 'Diseñadora de Producto (UX/UI)'), 'Indra Group',
+         L('Three digital-sales products for a multinational health company: two plan enrollments, a health questionnaire and a new preventive-health policy.', 'Tres productos de venta digital para una multinacional del sector salud: dos afiliaciones a planes, un cuestionario de salud y una póliza nueva de salud preventiva.'), True),
         ('2026', L('Apr to Sep 2026', 'abr a sep 2026'), L('Marketing Growth Lead', 'Marketing Growth Lead'), 'XTAM',
          L('B2B marketing and corporate branding at an AI consultancy, working directly with the founders.', 'Mercadeo B2B y marca corporativa de una consultora de IA, trabajando directamente con los founders.'), False),
-        ('2025', L('Oct 2025 to Oct 2026', 'oct 2025 a oct 2026'), L('Product Designer (UX/UI)', 'Diseñadora de Producto (UX/UI)'), 'Indra Group',
-         L('Three digital-sales products for a multinational health company: two plan enrollments, a health questionnaire and a new preventive-health policy.', 'Tres productos de venta digital para una multinacional del sector salud: dos afiliaciones a planes, un cuestionario de salud y una póliza nueva de salud preventiva.'), True),
         ('2025', L('Jan to Jul 2025', 'ene a jul 2025'), L('Internal Communications &amp; UX', 'Comunicación Interna y UX'), 'Tecnoquímicas',
          L('Redesign of the TQNet intranet.', 'Rediseño de la intranet TQNet.'), False),
         ('2024', L('2024', '2024'), L('UX/UI Designer', 'Diseñadora UX/UI'), 'UX Lab, Universidad Icesi',

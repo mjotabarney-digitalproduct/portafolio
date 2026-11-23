@@ -144,7 +144,7 @@ def home(lang):
     E = EXPERIENCE
     yc = ''.join(f'<div class="yc{" hi" if hi else ""}"><span class="yr" aria-hidden="true">{y}</span><small>{t(w, lang)}</small><h3>{t(ro, lang)}</h3><b>{t(co, lang) if isinstance(co, dict) else co}</b><p>{t(d, lang)}</p></div>' for y, w, ro, co, d, hi in E['items'])
     h += f'''<section class="sec exp" id="experience"><div class="wrap">
-<div class="exp-head"><div><span class="label">{t(E['label'], lang)}</span><h2>{t(E['h'], lang)}</h2></div><p>{t(E['p'], lang)}</p></div>
+<div class="exp-head"><div><span class="label">{t(E['label'], lang)}</span><h2>{t(E['h'], lang)}</h2></div></div>
 <div class="ycs">{yc}</div>
 </div></section>
 </main>
