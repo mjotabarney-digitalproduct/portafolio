@@ -3,7 +3,7 @@
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from content_me import TEASER, ME
+from content_me import TEASER, ME, BENTO, EXPERIENCE
 from content_home import SITE, NAV, HERO, STATS, STATS_ES_NUM, WORK, BEHANCE, PRINCIPLES, ABOUT, CONTACT
 from content_cases import CASES, NDA, NDA_TQ
 
@@ -96,11 +96,18 @@ def home(lang):
 <div class="meta">{meta}</div>
 </div></section>
 '''
-    bars = ''.join(f'<div class="bar reveal"><b>{num(n, lang)}</b><span><strong>{t(ttl, lang)}</strong>' + (f'<small>{t(sub, lang)}</small>' if sub else '') + '</span></div>' for n, ttl, sub in STATS['bars'])
-    h += f'''<section class="sec stats"><div class="wrap grid">
-<div class="intro"><span class="label">{t(STATS['label'], lang)}</span><p>{t(STATS['intro'], lang)}</p></div>
-<div class="bars">{bars}</div>
-</div></section>
+    B = BENTO
+    tiles = ''.join(f'<div class="tile"><b>{n}</b><span>{t(l, lang)}</span></div>' for n, l in B['tiles'])
+    pills = ''.join(f'<i style="--r:{rot}deg">{t(x, lang)}</i>' for x, rot in B['industries'])
+    work = ''.join(f'<li>{t(x, lang)}</li>' for x in B['work_items'])
+    ring = (t(B['badge'], lang) + ' · ') * 2
+    h += f'''<section class="sec bento-sec" id="about"><div class="wrap"><div class="bento reveal">
+<div class="b-intro"><span class="label">{t(B['label'], lang)}</span><h2>{t(B['h'], lang)}</h2><p>{t(B['p'], lang)}</p><div class="tiles">{tiles}</div></div>
+<div class="b-photo"><img src="{r}assets/{v('img/me/portrait-home.jpg')}" alt="María José Barney" loading="lazy"><div class="toss">{pills}</div></div>
+<div class="b-side"><div class="grp"><span class="k">{t(B['work'], lang)}</span><ul class="work">{work}</ul></div>
+<div class="grp"><span class="k">{t(B['off'], lang)}</span><p class="off">{t(B['off_p'], lang)}</p></div>
+<a class="badge" href="me/" aria-label="{t(B['badge'], lang)}"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="ring-{lang}" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#ring-{lang}" textLength="272" lengthAdjust="spacing">{ring}</textPath></text></svg><i>↗</i></a></div>
+</div></div></section>
 '''
     cards = ''
     for i, c in enumerate(CASES, 1):
@@ -134,16 +141,11 @@ def home(lang):
 <div class="principles">{pr}</div>
 </div></section>
 '''
-    tl = ''.join(f'<li><span class="when">{t(w, lang)}</span><div><b>{t(r_, lang)}</b><small>{t(d, lang)}</small></div></li>' for w, r_, d in ABOUT['exp'])
-    q = ''.join(f'<li>{t(x, lang)}</li>' for x in ABOUT['qual'])
-    h += f'''<section class="sec about" id="about"><div class="wrap grid">
-<div><span class="label">{t(ABOUT['label'], lang)}</span>
-<span class="sub">{t(TEASER['work'], lang)}</span><ul class="qual">{''.join(f'<li>{t(x, lang)}</li>' for x in TEASER['work_items'])}</ul>
-<span class="sub">{t(TEASER['off'], lang)}</span><ul class="qual">{''.join(f'<li>{t(x, lang)}</li>' for x in TEASER['off_items'])}</ul>
-<a class="meet" href="{'' if lang == 'en' else ''}me/">{t(TEASER['link'], lang)} →</a></div>
-<div><p class="big">{t(ABOUT['big'], lang)}</p><p>{t(ABOUT['body'], lang)}</p>
-<p class="label" style="margin:2.4rem 0 1rem">{t(ABOUT['exp_label'], lang)}</p>
-<ol class="timeline">{tl}</ol></div>
+    E = EXPERIENCE
+    yc = ''.join(f'<div class="yc{" hi" if hi else ""}"><span class="yr" aria-hidden="true">{y}</span><small>{t(w, lang)}</small><h3>{t(ro, lang)}</h3><b>{t(co, lang) if isinstance(co, dict) else co}</b><p>{t(d, lang)}</p></div>' for y, w, ro, co, d, hi in E['items'])
+    h += f'''<section class="sec exp" id="experience"><div class="wrap">
+<div class="exp-head"><div><span class="label">{t(E['label'], lang)}</span><h2>{t(E['h'], lang)}</h2></div><p>{t(E['p'], lang)}</p></div>
+<div class="ycs">{yc}</div>
 </div></section>
 </main>
 '''

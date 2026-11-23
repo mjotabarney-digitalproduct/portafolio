@@ -53,3 +53,45 @@ ME = {
     'end': L('Now you’ve met both of us.', 'Ya nos conociste a las dos.'),
     'end_link': L('See the work', 'Ver los casos'),
 }
+
+BENTO = {
+    'label': L('About me', 'Sobre mí'),
+    'h': L('Hi, I’m <em>J.</em>', 'Hola, soy <em>J.</em>'),
+    'p': L('I’m a product designer from Cali with a double degree in Interactive Media Design and International Marketing and Advertising.',
+           'Soy diseñadora de producto, de Cali, con doble titulación en Diseño de Medios Interactivos y Mercadeo Internacional y Publicidad.'),
+    'tiles': [('4', L('Years of professional product design', 'Años de diseño de producto profesional')),
+              ('3', L('Insurance products, end to end', 'Productos de seguros, de punta a punta')),
+              ('95%', L('Fewer answers in a health questionnaire', 'Menos respuestas en un cuestionario de salud')),
+              ('+44%', L('Intranet coverage', 'Cubrimiento de la intranet'))],
+    'industries': [(L('Health insurance', 'Seguros de salud'), -6), (L('Pharma', 'Farmacéutica'), 4), (L('Banking', 'Banca'), -3),
+                   (L('AI consulting', 'Consultoría de IA'), 5), (L('Customer experience', 'Experiencia del cliente'), -4)],
+    'work': L('At work', 'En el trabajo'),
+    'work_items': [L('I listen before I design', 'Escucho antes de diseñar'),
+                   L('I decide with evidence', 'Decido con evidencia'),
+                   L('I enjoy teamwork', 'Disfruto el trabajo en equipo')],
+    'off': L('Off the clock', 'Fuera de horario'),
+    'off_p': L('Romance and fantasy novels, cats, too much coffee and a camera roll full of skies.',
+               'Novelas románticas y de fantasía, gatos, demasiado café y un carrete lleno de cielos.'),
+    'badge': L('Get to know me', 'Conóceme'),
+}
+
+EXPERIENCE = {
+    'label': L('Experience', 'Experiencia'),
+    'h': L('Built through <em>experience</em>', 'Hecha a punta de <em>experiencia</em>'),
+    'p': L('Six roles across product design, marketing and research, most recent first.',
+           'Seis roles entre diseño de producto, mercadeo e investigación, del más reciente al más antiguo.'),
+    'items': [
+        ('2026', L('Apr to Sep 2026', 'abr a sep 2026'), L('Marketing Growth Lead', 'Marketing Growth Lead'), 'XTAM',
+         L('B2B marketing and corporate branding at an AI consultancy, working directly with the founders.', 'Mercadeo B2B y marca corporativa de una consultora de IA, trabajando directamente con los founders.'), False),
+        ('2025', L('Oct 2025 to Oct 2026', 'oct 2025 a oct 2026'), L('Product Designer (UX/UI)', 'Diseñadora de Producto (UX/UI)'), 'Indra Group',
+         L('Three digital-sales products for a multinational health company: two plan enrollments, a health questionnaire and a new preventive-health policy.', 'Tres productos de venta digital para una multinacional del sector salud: dos afiliaciones a planes, un cuestionario de salud y una póliza nueva de salud preventiva.'), True),
+        ('2025', L('Jan to Jul 2025', 'ene a jul 2025'), L('Internal Communications &amp; UX', 'Comunicación Interna y UX'), 'Tecnoquímicas',
+         L('Redesign of the TQNet intranet.', 'Rediseño de la intranet TQNet.'), False),
+        ('2024', L('2024', '2024'), L('UX/UI Designer', 'Diseñadora UX/UI'), 'UX Lab, Universidad Icesi',
+         L('Client prototypes, usability tests and heuristic evaluations.', 'Prototipos para clientes, pruebas de usabilidad y evaluaciones heurísticas.'), False),
+        ('2023', L('2023 to 2025', '2023 a 2025'), L('Service Experience Specialist', 'Service Experience Specialist'), 'TaskUs',
+         L('High-volume English-language support against quality standards.', 'Atención de alto volumen en inglés con estándares de calidad.'), False),
+        ('2022', L('2022 to 2024', '2022 a 2024'), L('Freelance UX/UI &amp; brand designer', 'Diseñadora UX/UI y de marca independiente'), L('Independent', 'Independiente'),
+         L('Research, prototypes, identity systems and brand manuals.', 'Investigación, prototipos, sistemas de identidad y manuales de marca.'), False),
+    ],
+}
