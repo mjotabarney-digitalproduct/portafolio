@@ -126,7 +126,9 @@ def home(lang):
     slugs = {c['slug']: c for c in CASES}
     pr = ''
     for i, (ttl, body, slug) in enumerate(PRINCIPLES['items'], 1):
-        pr += f'''<div class="principle reveal"><span class="mono">0{i}</span><h3>{t(ttl, lang)}</h3><p>{t(body, lang)}</p><a href="{'' if lang=='es' else ''}work/{slug}/">{t(PRINCIPLES['link'], lang)}</a></div>'''
+        ct = next(c for c in CASES if c['slug'] == slug)['title']
+        see = 'See it in' if lang == 'en' else 'Verlo en'
+        pr += f'''<a class="principle reveal" href="work/{slug}/"><span class="n">0{i}</span><h3>{t(ttl, lang)}</h3><p>{t(body, lang)}</p><span class="go">{see} “{t(ct, lang)}” →</span></a>'''
     h += f'''<section class="sec" id="approach"><div class="wrap">
 <div class="sec-head"><span class="label">{t(PRINCIPLES['label'], lang)}</span><p>{t(PRINCIPLES['intro'], lang)}</p></div>
 <div class="principles">{pr}</div>

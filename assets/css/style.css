@@ -97,15 +97,18 @@ a{color:inherit}
 @media (max-width:860px){.card{grid-template-columns:1fr}.card .img{min-height:200px;order:-1}}
 
 /* ---------- principles ---------- */
-.principles{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
-.principle{padding:32px 32px 36px 0;border-bottom:1px solid var(--line)}
-.principle:nth-child(odd){padding-right:40px;border-right:1px solid var(--line)}
-.principle:nth-child(even){padding-left:40px}
-.principle .mono{color:var(--muted)}
-.principle h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.8vw,36px);line-height:1.08;margin:.4em 0 .4em}
-.principle p{margin:0;font-size:17.5px;color:#4d2a24}
-.principle a{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;display:inline-block;margin-top:14px}
-@media (max-width:860px){.principles{grid-template-columns:1fr}.principle,.principle:nth-child(odd),.principle:nth-child(even){padding:28px 0;border-right:0}}
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.principle{display:flex;flex-direction:column;background:var(--sand);color:var(--ink);text-decoration:none;border-radius:18px;padding:clamp(28px,3vw,40px) clamp(28px,3vw,40px) clamp(26px,2.6vw,32px);min-height:300px;transition:background .35s ease,color .35s ease,transform .35s ease}
+.principle .n{font-family:var(--serif);font-style:italic;font-size:clamp(52px,5vw,64px);line-height:1;color:var(--purple);transition:color .35s ease}
+.principle h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.8vw,38px);line-height:1.04;margin:.35em 0 .35em}
+.principle p{margin:0 0 22px;font-size:17.5px;color:var(--muted);max-width:44ch;transition:color .35s ease}
+.principle .go{margin-top:auto;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--wine);transition:color .35s ease}
+.principle:hover,.principle:focus-visible{background:var(--ink);color:var(--sand);transform:translateY(-3px)}
+.principle:hover .n,.principle:focus-visible .n,.principle:hover .go,.principle:focus-visible .go{color:var(--peri)}
+.principle:hover p,.principle:focus-visible p{color:rgba(237,219,194,.82)}
+.principle:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.principle{transition:none}.principle:hover{transform:none}}
+@media (max-width:860px){.principles{grid-template-columns:1fr}.principle{min-height:0}}
 
 /* ---------- about ---------- */
 .about{background:var(--sand)}
